@@ -1,0 +1,97 @@
+﻿{
+    "dns":  {
+                "allowlist":  [
+
+                              ],
+                "upstream":  [
+                                 {
+                                     "port":  853,
+                                     "hostname":  "cloudflare-dns.com",
+                                     "type":  "dot",
+                                     "address":  "1.1.1.1"
+                                 },
+                                 {
+                                     "port":  853,
+                                     "hostname":  "dns.quad9.net",
+                                     "type":  "dot",
+                                     "address":  "9.9.9.9"
+                                 }
+                             ],
+                "fallback":  [
+                                 {
+                                     "type":  "system"
+                                 }
+                             ],
+                "hosts":  {
+
+                          },
+                "blocklist":  [
+                                  {
+                                      "url":  "file:///sdcard/Download/instagram_blocklist.txt",
+                                      "name":  "Instagram Time-Window",
+                                      "enabled":  true
+                                  }
+                              ]
+            },
+    "firewall":  {
+                     "defaultAction":  "allow",
+                     "appRules":  {
+                                      "com.instagram.android":  {
+                                                                    "wifi":  "block_scheduled",
+                                                                    "mobile":  "block_scheduled",
+                                                                    "schedule":  {
+                                                                                     "timezone":  "local",
+                                                                                     "rules":  [
+                                                                                                   {
+                                                                                                       "days":  [
+                                                                                                                    1,
+                                                                                                                    2,
+                                                                                                                    3,
+                                                                                                                    4,
+                                                                                                                    5,
+                                                                                                                    6,
+                                                                                                                    7
+                                                                                                                ],
+                                                                                                       "end":  "23:30",
+                                                                                                       "action":  "block",
+                                                                                                       "start":  "06:00"
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "days":  [
+                                                                                                                    1,
+                                                                                                                    2,
+                                                                                                                    3,
+                                                                                                                    4,
+                                                                                                                    5,
+                                                                                                                    6,
+                                                                                                                    7
+                                                                                                                ],
+                                                                                                       "end":  "06:00",
+                                                                                                       "action":  "allow",
+                                                                                                       "start":  "23:30"
+                                                                                                   }
+                                                                                               ],
+                                                                                     "enabled":  true
+                                                                                 }
+                                                                }
+                                  },
+                     "rules":  [
+
+                               ],
+                     "enabled":  true
+                 },
+    "vpn":  {
+                "lockdown":  true,
+                "alwaysOn":  true,
+                "bypassApps":  [
+
+                               ],
+                "enabled":  true
+            },
+    "version":  1,
+    "settings":  {
+                     "notificationLevel":  "minimal",
+                     "logLevel":  "info",
+                     "theme":  "system"
+                 }
+}

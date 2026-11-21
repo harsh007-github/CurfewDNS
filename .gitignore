@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+.venv/
+*.log
+
+# Generated artifacts (certificates, APKs, keys)
+artifacts/
+*.pem
+*.key
+*.crt
+*.pfx
+*.apk
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Windows
+*.lnk
+Desktop.ini
+
+# IDE / Local config
+*.user
+*.suo
